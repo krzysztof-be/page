@@ -40,7 +40,7 @@ class Page extends \App\Module {
 
 		}
 
-		return '';s
+		return '';
 
 	}
 
