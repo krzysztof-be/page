@@ -30,7 +30,7 @@ class Page extends \App\Module {
 
 			if(isset($args[0])) {
 
-				if(isset($page->args[0])) return $page->args[0];
+				if(isset($page->$args[0])) return $page->$args[0];
 				
 			} else {
 
@@ -40,7 +40,7 @@ class Page extends \App\Module {
 
 		}
 
-		return '';
+		return '';s
 
 	}
 
