@@ -63,11 +63,13 @@ class PageController extends Controller {
 
 		$page->name = $name;
 		$page->slug = $slug;
-		$page->content = $content;		
+		$page->content = $content;	
+
+		$page->save();	
 
 		\Flash::success('Page edited successfully.');
 
-		return \Redirect::back();
+		return \Redirect::to('admin/page/'.$slug.'/edit');
 
 	}
 
