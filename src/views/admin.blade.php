@@ -31,7 +31,7 @@
 					<td>{{ $page->slug }}</td>
 					<td>{{ $page->name }}</td>
 					<td>
-						<a href="{{ url('admin/page/' . $page->slug) }}" class="btn btn-sm btn-warning">edit</a>
+						<a href="{{ url('admin/page/' . $page->slug . '/edit') }}" class="btn btn-sm btn-danger">edit</a>
 					</td>
 				</tr>
 				@endforeach

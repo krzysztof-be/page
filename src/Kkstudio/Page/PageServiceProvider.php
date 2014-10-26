@@ -19,8 +19,12 @@ class PageServiceProvider extends ServiceProvider {
 	public function boot()
 	{
 		$this->package('kkstudio/page');
-		
+
 		\Route::get('admin/page', '\Kkstudio\Page\Controllers\PageController@admin');
+		\Route::get('admin/page/create', '\Kkstudio\Page\Controllers\PageController@create');
+		\Route::post('admin/page/create', '\Kkstudio\Page\Controllers\PageController@postCreate');
+		\Route::get('admin/page/{slug}/edit', '\Kkstudio\Page\Controllers\PageController@edit');
+		\Route::post('admin/page/{slug}/edit', '\Kkstudio\Page\Controllers\PageController@postEdit');
 	}
 
 	/**

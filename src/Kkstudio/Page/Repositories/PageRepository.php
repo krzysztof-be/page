@@ -19,4 +19,13 @@ class PageRepository {
 
 	}
 
+	public function create($slug, $name, $content)
+	{
+		return Model::create([
+			'slug' => $slug,
+			'content' => $content,
+			'name' => $name
+		]);
+	}
+
 }
