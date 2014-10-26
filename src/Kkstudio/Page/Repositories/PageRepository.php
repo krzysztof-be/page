@@ -13,4 +13,10 @@ class PageRepository {
 		return null;
 	}
 
+	public function all() {
+
+		return Model::orderBy('name', 'asc')->get();
+
+	}
+
 }
