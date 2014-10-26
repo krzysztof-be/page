@@ -1,7 +1,4 @@
-
-
-		\Route::get('admin/info', '\Kkstudio\Info\Controllers\InfoController@admin');
-		\Route::post('admin/info', '\Kkstudio\Info\Controllers\InfoController@edit');<?php namespace Kkstudio\Page;
+<?php namespace Kkstudio\Page;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -22,7 +19,7 @@ class PageServiceProvider extends ServiceProvider {
 	public function boot()
 	{
 		$this->package('kkstudio/page');
-
+		
 		\Route::get('admin/page', '\Kkstudio\Page\Controllers\PageController@admin');
 	}
 
