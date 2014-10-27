@@ -25,6 +25,8 @@ class PageServiceProvider extends ServiceProvider {
 		\Route::post('admin/page/create', '\Kkstudio\Page\Controllers\PageController@postCreate');
 		\Route::get('admin/page/{slug}/edit', '\Kkstudio\Page\Controllers\PageController@edit');
 		\Route::post('admin/page/{slug}/edit', '\Kkstudio\Page\Controllers\PageController@postEdit');
+		\Route::get('admin/page/{slug}/delete', '\Kkstudio\Page\Controllers\PageController@delete');
+		\Route::post('admin/page/{slug}/delete', '\Kkstudio\Page\Controllers\PageController@postDelete');
 	}
 
 	/**

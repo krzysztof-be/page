@@ -18,8 +18,6 @@
 
 			<div class="clearfix"></div>
 
-			<br><br>
-
 			<h3>{!! Form::label('name', 'Name') !!}</h3>
 			{!! Form::text('name', $page->name, [ 'class' => 'form-control' ]) !!}
 

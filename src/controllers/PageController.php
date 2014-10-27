@@ -73,4 +73,21 @@ class PageController extends Controller {
 
 	}
 
+	public function delete($slug, PageRepository $pages) 
+	{
+		$page = $pages->get($slug);
+
+		return \View::make('page::delete')->with('page', $page);
+	}
+
+	public function postDelete($slug, PageRepository $pages) 
+	{
+		$page = $pages->get($slug);
+		$page->delete();
+
+		\Flash::success('Page deleted.');
+
+		return \Redirect::to('admin/page/');
+	}
+
 }
