@@ -30,6 +30,16 @@ class PageController extends Controller {
 		$slug = \Str::slug($name);
 		$content = \Request::get('content');
 
+		$exists = $pages->get($slug);
+
+		if($exists) {
+
+			\Flash::error('Page with that name already exists.');
+
+			return \Redirect::back()->withInput();
+
+		}
+
 		$page = $pages->create($slug, $name, $content);
 
 		\Flash::success('Page created successfully.');
