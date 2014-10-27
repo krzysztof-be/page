@@ -10,7 +10,7 @@
 
 @section('content')
 
-	<div class="col-sm-10 col-md-10 col-lg-8"> 
+	<div class=""> 
 
 		{!! Form::open([ 'url' => 'admin/page/create']) !!}
 
