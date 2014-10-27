@@ -50,6 +50,8 @@
 							{!! Form::hidden('route', '{$slug}') !!}
 							{!! Form::hidden('params', json_encode(['slug' => 'test'])) !!}
 
+							{!! Form::submit('add to menu', [ 'class' => 'btn btn-sm btn-warning']) !!}
+
 						{!! Form::close() !!}
 
 						@endif
