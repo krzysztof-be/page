@@ -17,6 +17,7 @@
 		</a>
 
 		<div class="clearfix"></div>
+		@if(count($pages))
 
 		<table class="table table-striped">
 			<thead>
@@ -27,7 +28,6 @@
 				<th></th>
 			</thead>
 			<tbody>
-				@if(count($pages))
 				@foreach($pages as $page)
 				<tr>
 					<td>{{ $page->id }}</td>
@@ -41,11 +41,11 @@
 					</td>
 				</tr>
 				@endforeach
-				@else
-					<p class="text-muted">No pages found.</p>
-				@endif
 			</tbody>
 		</table>
+		@else
+			<p class="text-muted">No pages found.</p>
+		@endif
 
 	</div>
 
