@@ -26,6 +26,7 @@
 				<th>Name</th>
 				<th></th>
 				<th></th>
+				<th></th>
 			</thead>
 			<tbody>
 				@foreach($pages as $page)
@@ -38,6 +39,20 @@
 					</td>
 					<td>
 						<a href="{{ url('admin/page/' . $page->slug . '/delete') }}" class="btn btn-sm btn-danger">delete</a>
+					</td>
+					<td>
+						@if(m('Menu')->{$page->slug}())
+
+						@else
+						{!! Form::open([ 'url' => 'admin/menu/create']) !!}
+
+							{!! Form::hidden('display_name', $page->name) !!}
+							{!! Form::hidden('route', '{$slug}') !!}
+							{!! Form::hidden('params', json_encode(['slug' => 'test'])) !!}
+
+						{!! Form::close() !!}
+
+						@endif
 					</td>
 				</tr>
 				@endforeach
