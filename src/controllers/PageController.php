@@ -71,9 +71,9 @@ class PageController extends Controller {
 		$slug = \Str::slug($name);
 		$content = \Request::get('content');
 
-		$exists = $pages->get($slug);
+		$exists = $pages->getAll($slug);
 
-		if($exists) {
+		if(count($exists) > 1) {
 
 			\Flash::error('Page with that name already exists.');
 

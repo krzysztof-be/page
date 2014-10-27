@@ -13,6 +13,13 @@ class PageRepository {
 		return null;
 	}
 
+	public function getAll($slug) 
+	{
+		$page = Model::where('slug', $slug)->get();
+		
+		return $pages;
+	}
+
 	public function all() {
 
 		return Model::orderBy('name', 'asc')->get();
