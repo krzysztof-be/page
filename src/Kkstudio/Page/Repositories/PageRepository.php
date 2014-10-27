@@ -15,7 +15,7 @@ class PageRepository {
 
 	public function getAll($slug) 
 	{
-		$page = Model::where('slug', $slug)->get();
+		$pages = Model::where('slug', $slug)->get();
 		
 		return $pages;
 	}
