@@ -29,7 +29,7 @@ class PageServiceProvider extends ServiceProvider {
 		\Route::post('admin/page/{slug}/delete', '\Kkstudio\Page\Controllers\PageController@postDelete');
 
 
-		\Route::get('{$slug}', '\Kkstudio\Page\Controllers\PageController@page');
+		\Route::get('{slug}', '\Kkstudio\Page\Controllers\PageController@page');
 	}
 
 	/**
