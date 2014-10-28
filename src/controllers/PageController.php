@@ -8,7 +8,7 @@ class PageController extends Controller {
 
 	public function page($slug)
 	{
-		$content = m('Page')->$slug;
+		$content = m('Page')->$slug();
 
 		return v('page', [ 'content' => $content ]);
 	}
