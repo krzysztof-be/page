@@ -5,6 +5,13 @@ use Kkstudio\Page\Models\Page;
 use Kkstudio\Page\Repositories\PageRepository;
 
 class PageController extends Controller {
+
+	public function page($slug)
+	{
+		$content = m('Page')->$slug;
+
+		return v('page', [ 'content' => $content ]);
+	}
 	
 	public function admin(PageRepository $pages)
 	{		
