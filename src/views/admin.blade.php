@@ -48,7 +48,7 @@
 
 							{!! Form::hidden('display_name', $page->name) !!}
 							{!! Form::hidden('route', '{$slug}') !!}
-							{!! Form::hidden('params', json_encode(['slug' => 'test'])) !!}
+							{!! Form::hidden('params', json_encode(['slug' => $page->slug])) !!}
 
 							{!! Form::submit('add to menu', [ 'class' => 'btn btn-sm btn-warning']) !!}
 
