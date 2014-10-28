@@ -10,6 +10,8 @@
 
 @section('content')
 
+	<h3 class="pull-left">Pages</h3>
+
 	<div class=""> 
 
 		<a href="{{ url('admin/page/create') }}" class="btn btn-lg btn-success pull-right">
