@@ -41,9 +41,6 @@
 						<a href="{{ url('admin/page/' . $page->slug . '/delete') }}" class="btn btn-sm btn-danger">delete</a>
 					</td>
 					<td>
-						@if(m('Menu')->{$page->slug}())
-
-						@else
 						{!! Form::open([ 'url' => 'admin/menu/create']) !!}
 
 							{!! Form::hidden('display_name', $page->name) !!}
@@ -53,8 +50,6 @@
 							{!! Form::submit('add to menu', [ 'class' => 'btn btn-sm btn-warning']) !!}
 
 						{!! Form::close() !!}
-
-						@endif
 					</td>
 				</tr>
 				@endforeach
