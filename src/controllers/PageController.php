@@ -10,7 +10,7 @@ class PageController extends Controller {
 	{
 		$content = m('Page')->$slug();
 
-		return v('page', [ 'content' => $content ]);
+		return v('page.index', [ 'content' => $content ]);
 	}
 	
 	public function admin(PageRepository $pages)
@@ -47,7 +47,9 @@ class PageController extends Controller {
 
 		}
 
-		$page = $pages->create($slug, $name, $content);
+		$lp = $pages->max() + 1;
+
+		$page = $pages->create($slug, $name, $content, $lp);
 
 		\Flash::success('Page created successfully.');
 
