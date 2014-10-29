@@ -10,7 +10,7 @@ class PageRepository {
 
 		if($page) return $page;
 
-		return null;
+		return \Redirect::to('/');
 	}
 
 	public function getAll($slug) 
