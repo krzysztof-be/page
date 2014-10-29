@@ -22,6 +22,8 @@ class Page extends \App\Module {
 
 			$page = $this->pages->get($func);
 
+			if(!$page) \App::abort(404);
+
 		}
 
 		if($page) {

@@ -20,15 +20,15 @@ class PageServiceProvider extends ServiceProvider {
 	{
 		$this->package('kkstudio/page');
 
-		\Route::group([ 'middleware' => 'admin'], function() {
+		\Route::group([ 'prefix' => 'admin', 'middleware' => 'admin'], function() {
 
-			\Route::get('admin/page', '\Kkstudio\Page\Controllers\PageController@admin');
-			\Route::get('admin/page/create', '\Kkstudio\Page\Controllers\PageController@create');
-			\Route::post('admin/page/create', '\Kkstudio\Page\Controllers\PageController@postCreate');
-			\Route::get('admin/page/{slug}/edit', '\Kkstudio\Page\Controllers\PageController@edit');
-			\Route::post('admin/page/{slug}/edit', '\Kkstudio\Page\Controllers\PageController@postEdit');
-			\Route::get('admin/page/{slug}/delete', '\Kkstudio\Page\Controllers\PageController@delete');
-			\Route::post('admin/page/{slug}/delete', '\Kkstudio\Page\Controllers\PageController@postDelete');
+			\Route::get('page', '\Kkstudio\Page\Controllers\PageController@admin');
+			\Route::get('page/create', '\Kkstudio\Page\Controllers\PageController@create');
+			\Route::post('page/create', '\Kkstudio\Page\Controllers\PageController@postCreate');
+			\Route::get('page/{slug}/edit', '\Kkstudio\Page\Controllers\PageController@edit');
+			\Route::post('page/{slug}/edit', '\Kkstudio\Page\Controllers\PageController@postEdit');
+			\Route::get('page/{slug}/delete', '\Kkstudio\Page\Controllers\PageController@delete');
+			\Route::post('page/{slug}/delete', '\Kkstudio\Page\Controllers\PageController@postDelete');
 
 		});
 
