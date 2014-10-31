@@ -47,9 +47,7 @@ class PageController extends Controller {
 
 		}
 
-		$lp = $pages->max() + 1;
-
-		$page = $pages->create($slug, $name, $content, $lp);
+		$page = $pages->create($slug, $name, $content);
 
 		\Flash::success('Page created successfully.');
 
