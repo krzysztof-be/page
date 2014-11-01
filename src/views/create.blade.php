@@ -24,7 +24,7 @@
 			{!! Form::text('name', '', [ 'class' => 'form-control' ]) !!}
 
 			<h3>{!! Form::label('content', 'Page content') !!}</h3>
-			{!! Form::textarea('content', '', [ 'class' => 'form-control', 'rows' => 10 ]) !!}
+			{!! Form::textarea('content', '', [ 'class' => 'editor form-control', 'rows' => 10 ]) !!}
 
 		{!! Form::close() !!}
 
