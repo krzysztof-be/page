@@ -1,16 +1,8 @@
 @extends('admin.template')
 
-@section('header')
-    Info
-@stop
-
-@section('small')
-    information about You and your company
-@stop
-
 @section('content')
 
-	<h3 class="pull-left">Pages</h3>
+	<h3 class="pull-left">Strony</h3>
 
 	<div class=""> 
 
@@ -19,7 +11,7 @@
 		</a>
 
 		<a href="{{ url('admin/page/create') }}" class="btn btn-lg btn-success pull-right">
-			Create new page
+			Stwórz nową stronę
 		</a>
 
 		<div class="clearfix"></div>
@@ -28,8 +20,8 @@
 		<table class="table table-striped">
 			<thead>
 				<th>#</th>
-				<th>Slug</th>
-				<th>Name</th>
+				<th>Skrót</th>
+				<th>Nazwa</th>
 				<th></th>
 				<th></th>
 				<th></th>
@@ -41,10 +33,10 @@
 					<td>{{ $page->slug }}</td>
 					<td>{{ $page->name }}</td>
 					<td>
-						<a href="{{ url('admin/page/' . $page->slug . '/edit') }}" class="btn btn-sm btn-primary">edit</a>
+						<a href="{{ url('admin/page/' . $page->slug . '/edit') }}" class="btn btn-sm btn-primary">edytuj</a>
 					</td>
 					<td>
-						<a href="{{ url('admin/page/' . $page->slug . '/delete') }}" class="btn btn-sm btn-danger">delete</a>
+						<a href="{{ url('admin/page/' . $page->slug . '/delete') }}" class="btn btn-sm btn-danger">usuń</a>
 					</td>
 					<td>
 						{!! Form::open([ 'url' => 'admin/menu/create']) !!}
@@ -53,7 +45,7 @@
 							{!! Form::hidden('route', '{$slug}') !!}
 							{!! Form::hidden('params', json_encode(['slug' => $page->slug])) !!}
 
-							{!! Form::submit('add to menu', [ 'class' => 'btn btn-sm btn-warning']) !!}
+							{!! Form::submit('Dodaj do menu', [ 'class' => 'btn btn-sm btn-warning']) !!}
 
 						{!! Form::close() !!}
 					</td>
@@ -62,7 +54,7 @@
 			</tbody>
 		</table>
 		@else
-			<p class="text-muted">No pages found.</p>
+			<p class="text-muted">Brak dodanych stron.</p>
 		@endif
 
 	</div>

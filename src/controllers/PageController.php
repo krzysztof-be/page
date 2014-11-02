@@ -27,7 +27,7 @@ class PageController extends Controller {
 	{
 		if(! \Request::get('name')) {
 
-			\Flash::error('Please provide a name.');
+			\Flash::error('Musisz podać nazwę strony.');
 
 			return \Redirect::back()->withInput();
 
@@ -41,7 +41,7 @@ class PageController extends Controller {
 
 		if($exists) {
 
-			\Flash::error('Page with that name already exists.');
+			\Flash::error('Strona z tą nazwą już istnieje.');
 
 			return \Redirect::back()->withInput();
 
@@ -49,7 +49,7 @@ class PageController extends Controller {
 
 		$page = $pages->create($slug, $name, $content);
 
-		\Flash::success('Page created successfully.');
+		\Flash::success('Pomyślnie dodano stronę.');
 
 		return \Redirect::to('admin/page');
 
@@ -68,7 +68,7 @@ class PageController extends Controller {
 
 		if(! \Request::get('name')) {
 
-			\Flash::error('Please provide a name.');
+			\Flash::error('Musisz podać nazwę strony.');
 
 			return \Redirect::back()->withInput();
 
@@ -82,7 +82,7 @@ class PageController extends Controller {
 
 		if($exists && $exists->id != $page->id) {
 
-			\Flash::error('Page with that name already exists.');
+			\Flash::error('Strona z tą nazwą już istnieje.');
 
 			return \Redirect::back()->withInput();
 
@@ -94,7 +94,7 @@ class PageController extends Controller {
 
 		$page->save();	
 
-		\Flash::success('Page edited successfully.');
+		\Flash::success('Pomyślnie edytowano stronę');
 
 		return \Redirect::to('admin/page/'.$slug.'/edit');
 
@@ -112,7 +112,7 @@ class PageController extends Controller {
 		$page = $pages->get($slug);
 		$page->delete();
 
-		\Flash::success('Page deleted.');
+		\Flash::success('Strona usunięta.');
 
 		return \Redirect::to('admin/page/');
 	}
