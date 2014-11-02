@@ -16,9 +16,9 @@ class KkstudioCreateInfopageTable extends Migration {
 
 			$table->increments('id');
 			$table->string('slug');
-			$table->text('content');
+			$table->text('content')->nullable();
 			$table->string('name');
-			$table->timestamps();
+			$table->nullableTimestamps();
 
 		});
 	}
