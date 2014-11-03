@@ -6,6 +6,13 @@ use Kkstudio\Page\Repositories\PageRepository;
 
 class PageController extends Controller {
 
+	protected $pages;
+
+	public function __construct(PageRepository $pages)
+	{
+		$this->pages = $pages;
+	}
+
 	public function page($slug)
 	{
 		$content = m('Page')->$slug();
@@ -13,9 +20,9 @@ class PageController extends Controller {
 		return v('page.index', [ 'content' => $content ]);
 	}
 	
-	public function admin(PageRepository $pages)
+	public function admin()
 	{		
-		return \View::make('page::admin')->with('pages', $pages->all());
+		return \View::make('page::admin')->with('pages', $this->pages->all());
 	}
 
 	public function create() 
@@ -23,7 +30,7 @@ class PageController extends Controller {
 		return \View::make('page::create');
 	}
 
-	public function postCreate(PageRepository $pages) 
+	public function postCreate() 
 	{
 		if(! \Request::get('name')) {
 
@@ -37,7 +44,7 @@ class PageController extends Controller {
 		$slug = \Str::slug($name);
 		$content = \Request::get('content');
 
-		$exists = $pages->get($slug);
+		$exists = $this->pages->get($slug);
 
 		if($exists) {
 
@@ -47,7 +54,7 @@ class PageController extends Controller {
 
 		}
 
-		$page = $pages->create($slug, $name, $content);
+		$page = $this->pages->create($slug, $name, $content);
 
 		\Flash::success('Pomyślnie dodano stronę.');
 
@@ -55,16 +62,16 @@ class PageController extends Controller {
 
 	}
 
-	public function edit($slug, PageRepository $pages) 
+	public function edit($slug) 
 	{
-		$page = $pages->get($slug);
+		$page = $this->pages->get($slug);
 
 		return \View::make('page::edit')->with('page', $page);
 	}
 
-	public function postEdit($slug, PageRepository $pages) 
+	public function postEdit($slug) 
 	{
-		$page = $pages->get($slug);
+		$page = $this->pages->get($slug);
 
 		if(! \Request::get('name')) {
 
@@ -78,7 +85,7 @@ class PageController extends Controller {
 		$slug = \Str::slug($name);
 		$content = \Request::get('content');
 
-		$exists = $pages->get($slug);
+		$exists = $this->pages->get($slug);
 
 		if($exists && $exists->id != $page->id) {
 
@@ -100,16 +107,16 @@ class PageController extends Controller {
 
 	}
 
-	public function delete($slug, PageRepository $pages) 
+	public function delete($slug) 
 	{
-		$page = $pages->get($slug);
+		$page = $this->pages->get($slug);
 
 		return \View::make('page::delete')->with('page', $page);
 	}
 
-	public function postDelete($slug, PageRepository $pages) 
+	public function postDelete($slug) 
 	{
-		$page = $pages->get($slug);
+		$page = $this->pages->get($slug);
 		$page->delete();
 
 		\Flash::success('Strona usunięta.');
