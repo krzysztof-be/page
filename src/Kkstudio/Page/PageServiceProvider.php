@@ -20,7 +20,7 @@ class PageServiceProvider extends ServiceProvider {
 	{
 		$this->package('kkstudio/page');
 
-		\Route::group([ 'prefix' => 'admin', 'middleware' => 'admin'], function() {
+		\Route::group([ 'prefix' => 'admin', 'before' => 'admin'], function() {
 
 			\Route::get('page', '\Kkstudio\Page\Controllers\PageController@admin');
 			\Route::get('page/create', '\Kkstudio\Page\Controllers\PageController@create');
