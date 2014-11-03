@@ -32,8 +32,6 @@ class PageServiceProvider extends ServiceProvider {
 
 		});
 
-		\Route::get('{slug}', '\Kkstudio\Page\Controllers\PageController@page');
-
 	}
 
 	/**
