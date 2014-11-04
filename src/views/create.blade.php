@@ -4,9 +4,12 @@
 
 	<h3 class="pull-left">Stwórz nową stronę</h3>
 
+			<div class="clearfix"></div>
+
 	<p class="text-muted">Nazwy zawierające skróty dostępnych modułów są zarezerwowane. Jeśli ich użyjesz w nazwie strony mogą one nie działać poprawnie.</p>
 	<p class="text-muted">Zarezerowane nazwy: <b>blog, info, gallery, page, portfolio, resume, contact, offer</b></p>
 
+			<div class="clearfix"></div>
 	<div class=""> 
 
 		{!! Form::open([ 'url' => 'admin/page/create']) !!}
